@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>json2js</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        textarea {
+            width: 45%;
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body onload="json2js()">
+    <h1>Converting json string to js object.</h1>
+
+    <textarea id="json" onchange="json2js()">{"test":"it","szx":666}</textarea>
+    <textarea id="js"></textarea>
+
+    <script src="javascript-stringify.js"></script>
+    <script>
+        function json2js() {
+            var obj = JSON.parse(document.getElementById("json").value);
+            document.getElementById("js").innerHTML = javascriptStringify(obj);
+        }
+    </script>
+
+    <p>Reference:</p>
+    <a href="https://github.com/Dinoshauer/json-to-js">https://github.com/Dinoshauer/json-to-js</a>
+    <br />
+    <a href="https://github.com/blakeembrey/javascript-stringify">https://github.com/blakeembrey/javascript-stringify</a>
+</body>
+
+</html>
